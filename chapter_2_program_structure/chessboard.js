@@ -16,24 +16,7 @@ Passing this string to console.log should show something like this:
 When you have a program that generates this pattern, define a binding size = 8 and change the program so that it works 
 for any size, outputting a grid of the given width and height.*/
 
-/* First version working for an 8x8 grid
-let chess = "";
-let iterations = (8*8) + 7;
-
-for (i = 1; i <= iterations; i++) {
-    if (i % 9 == 0) {
-        chess += "\n";
-    } else if (i % 2 != 0) {
-        chess += " ";
-    } else if (i % 2 == 0) {
-        chess += "#";
-    }
-}
-
-console.log(chess);*/
-
-
-//Following is working for 8 but not for 9, review error
+/*Following is working for 8 but not for 9, review error
 let chess = "";
 let row = 8;
 let column = row;
@@ -51,4 +34,20 @@ for (i = 1; i <= iterations; i++) {
     }
 }
 
-console.log(chess);
+console.log(chess);*/
+
+let size = 8;
+let board = "";
+
+for (let i = 0; i < size; i++) {
+    for (let j = 0; j < size; j++) {
+        if ((j + i) % 2 == 0) {
+            board += " ";
+        } else {
+            board += "#";
+        }
+    }
+    board += "\n";
+}
+
+console.log(board);
